@@ -1,18 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Add slide-up animation class
-        entry.target.classList.add('animate-slide-up');
-        observer.unobserve(entry.target); // Animate only once
-      }
-    });
-  }, {
-    threshold: 0.1
+// Simple JS to add animation classes on page load (optional)
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.animate-fade-in').forEach(el => {
+    el.style.opacity = 0;
+    el.classList.add('animate-fade-in');
   });
 
-  // Observe all sections that should animate
-  document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
+  document.querySelectorAll('.animate-slide-up').forEach(el => {
+    el.style.opacity = 0;
+    el.classList.add('animate-slide-up');
   });
 });
