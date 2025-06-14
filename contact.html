@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Bhargav Patel</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,14 +25,13 @@
 
   <main>
     <section class="contact animate-fade-in">
-      <h1>Contact Me</h1>
+      <h1 class="typing-text" id="typed-name"></h1>
       <p>You can reach me via email or social media below:</p>
       <ul class="contact-list">
         <li><strong>Email:</strong> <a href="mailto:bhargavp954@gmail.com">bhargavp954@gmail.com</a></li>
         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bhargav-patel610/" target="_blank">linkedin.com/in/bhargavp610</a></li>
         <li><strong>GitHub:</strong> <a href="https://github.com/Bhargavp610" target="_blank">github.com/Bhargavp610</a></li>
       </ul>
-
     </section>
   </main>
 
@@ -39,5 +43,20 @@
   </footer>
 
   <script src="animations.js"></script>
+  <script>
+    const text = "Contact Me";
+    const speed = 100;
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typed-name").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
