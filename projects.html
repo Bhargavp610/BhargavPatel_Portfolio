@@ -1,99 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #fdfdfd;
-      font-family: 'Fira Code', monospace;
-      margin: 0;
-      padding: 0 20px;
-      color: #333;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-    }
-
-    .typing-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
-      color: #e67e22;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: .15em solid #e67e22;
-      width: 0;
-      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: #e67e22; }
-    }
-
-    h2 {
-      color: #2c3e50;
-      font-size: 1.5em;
-      margin-top: 30px;
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Bhargav Patel</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="animation.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <div class="typing-title">My Project Portfolio</div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="blue-text">Home</a></li>
+        <li><a href="project.html" class="blue-text">Projects</a></li>
+        <li><a href="#contact" class="blue-text">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h2>Machine Learning Projects</h2>
-    <ul>
-      <li><strong>Credit Card Categorization:</strong> Classified credit scores into Good, Standard, and Poor using Decision Tree, KNN, and Naive Bayes. Included training, feature selection, cross-validation, and confusion matrix evaluation.</li>
-      <li><strong>Weather Predictor:</strong> Built a regression-based model in Python to forecast weather from past meteorological data, including preprocessing, feature scaling, and test-set evaluation.</li>
-      <li><strong>Predict Salary:</strong> Implemented KNN, Decision Tree, and Random Forest to determine if salary is ≤ 50000 or higher based on input data.</li>
-    </ul>
+  <main class="projects-section">
+    <h2 class="section-title typing">💡 Machine Learning Projects</h2>
 
-    <h2>Data Structures & Algorithms Projects</h2>
-    <ul>
-      <li><strong>15 Puzzle Solver:</strong> Implemented A* algorithm to solve the 15 puzzle efficiently.</li>
-      <li><strong>Huffman Coding Assignment:</strong>
+    <div class="project-item">
+      <h3>Credit Card Categorization</h3>
+      <p>Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Weather Predictor</h3>
+      <p>Forecasts weather using regression models. Handles data preparation, feature scaling, and test-set evaluation with excellent interpretability.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Predict Salary</h3>
+      <p>Predicts if salary is above or below $50,000 using KNN, Decision Tree, and Random Forest.</p>
+    </div>
+
+    <h2 class="section-title typing">🔧 Compiler Projects</h2>
+
+    <div class="project-item">
+      <h3>Building a Lexical Analyzer</h3>
+      <p>Implemented a lexical analyzer for a Pascal-like language supporting tokenizing with descriptive error handling.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Building a Parser</h3>
+      <p>Recursive-descent parser for a Pascal-like language using EBNF grammar. Includes semantic checks, error messages, and syntax validation.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Building an Interpreter</h3>
+      <p>Executes the Pascal-like language with type checking, symbol tables, expression evaluation, and runtime error handling.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Huffman Coding Assignment</h3>
+      <p>
+        Group project involving:
         <ul>
-          <li>frequency_table(st): Prints frequency of each character in the string.</li>
-          <li>Huffman_code(st): Builds Huffman tree and generates codes.</li>
-          <li>Huffman_encode(st, codes): Encodes the string using Huffman codes.</li>
-          <li>Huffman_tree(L): Reconstructs Huffman tree from character-code list.</li>
-          <li>Huffman_decode(bst, tree): Decodes encoded binary string using Huffman tree.</li>
+          <li>Frequency table construction for characters.</li>
+          <li>Building Huffman trees and generating codes.</li>
+          <li>Encoding and decoding strings using Huffman coding.</li>
         </ul>
-      </li>
-    </ul>
+      </p>
+    </div>
 
-    <h2>Compiler Projects</h2>
-    <ul>
-      <li><strong>Lexical Analyzer:</strong> Tokenizes source code input using finite automata and token classes.</li>
-      <li><strong>Parser (Recursive-Descent):</strong> Parses a simple Pascal-like language using EBNF grammar and prints error messages on failure.</li>
-      <li><strong>Interpreter:</strong> Executes the parsed program with support for expressions, variable storage, write/writeln, if/else and semantic error handling.</li>
-    </ul>
+    <div class="project-item">
+      <h3>15-Puzzle Solver (A* Algorithm)</h3>
+      <p>Implemented the 15-puzzle solver using the A* algorithm with Manhattan distance heuristic, showcasing problem solving and heuristic search skills.</p>
+    </div>
 
-    <h2>Game Development Projects</h2>
-    <ul>
-      <li><strong>3D Games in Unity:</strong> Designed and developed 3D games as part of Unity and VR course.</li>
-      <li><strong>VR Pedestrian Simulation:</strong> Built as capstone project to simulate VR pedestrian navigation with immersive controls.</li>
-      <li><strong>Unity Certificate:</strong> Successfully earned certification for Unity and VR game development.</li>
-    </ul>
-  </div>
+    <h2 class="section-title typing">🎮 Game Development Projects</h2>
+
+    <div class="project-item">
+      <h3>3D Unity Games (3–5 Projects)</h3>
+      <p>Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>VR Pedestrian Safety Simulation (Capstone)</h3>
+      <p>Designed a VR simulation for pedestrian safety using Unity. Integrated interactive elements and immersive user experience.</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Unity Certification</h3>
+      <p>Earned certification in Unity Development validating 3D and VR project skills, awarded by my college for senior year capstone.</p>
+    </div>
+
+  </main>
 </body>
 </html>
