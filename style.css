@@ -78,31 +78,6 @@ section {
   margin-bottom: 3rem;
 }
 
-/* Profile and Skills side-by-side layout */
-.profile-section, .skills-section {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.profile-section .profile-text,
-.skills-section .skills-text {
-  flex: 1;
-}
-
-.profile-section .profile-image,
-.skills-section .skills-image {
-  flex: 1;
-}
-
-.profile-image img,
-.skills-image img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
-}
-
-/* Resume download button */
 .resume-download {
   display: inline-block;
   background: var(--primary-color);
@@ -119,7 +94,6 @@ section {
   color: var(--bg-color);
 }
 
-/* Project Cards */
 .project-card {
   background: var(--secondary-color);
   padding: 1.5rem;
@@ -166,12 +140,8 @@ section {
   .nav-bar li {
     margin: 1rem 0;
   }
-
-  .profile-section, .skills-section {
-    flex-direction: column;
-  }
 }
-  
+
 /* Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; }
