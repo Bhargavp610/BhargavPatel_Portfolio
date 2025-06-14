@@ -130,3 +130,77 @@ footer {
   background: var(--accent-color);
   color: var(--bg-color);
 }
+/* Contact section container with flex layout */
+.contact-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.profile-summary {
+  flex: 1 1 350px;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.profile-summary h1 {
+  font-weight: 700;
+  color: #0074D9; /* blue */
+  margin-bottom: 0.5rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-list a.blue-text {
+  text-decoration: none;
+  color: #0074D9;
+  font-weight: 600;
+}
+
+.profile-pic {
+  flex: 1 1 300px;
+  max-width: 300px;
+}
+
+.profile-pic img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Slide in from right animation */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+/* Nav blue-text and active link styling */
+.nav-bar a.blue-text {
+  color: #0074D9;
+}
+
+.nav-bar a.active {
+  font-weight: 700;
+  border-bottom: 2px solid #0074D9;
+}
