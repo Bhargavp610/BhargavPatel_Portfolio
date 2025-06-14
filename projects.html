@@ -1,77 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Bhargav Patel</title>
-
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <nav class="nav-bar">
-      <a href="index.html" class="logo">Bhargav Patel</a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="projects animate-fade-in">
-      <h1 class="typing-text" id="typed-name"></h1>
-      
-      <article class="project-card">
-        <h2>Lexical Analyzer (C++)</h2>
-        <p>Built a compiler component to tokenize input using regex and finite automata. Detected syntax errors efficiently.</p>
-      </article>
-      <article class="project-card">
-        <h2>15-Puzzle Solver (C)</h2>
-        <p>Developed an A* search algorithm with Manhattan Distance heuristic for optimized pathfinding in large state spaces.</p>
-      </article>
-      <article class="project-card">
-        <h2>Stock Tracker (Python, PHP, MongoDB)</h2>
-        <p>Scraped live stock data and stored it in MongoDB with a PHP backend for real-time monitoring.</p>
-      </article>
-      <article class="project-card">
-        <h2>Advanced Database System</h2>
-        <p>Designed and queried complex PL/SQL queries and converted XML to JSON and vice versa.</p>
-      </article>
-      <article class="project-card">
-        <h2>3D Game Projects (Unity, C#)</h2>
-        <p>Created games featuring realistic movement and physics using animation blending and IK.</p>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <a href="Bhargav_Patel_Resume.pdf" download class="resume-download">
-      📄 Download My Resume (PDF)
-    </a>
-    <p>&copy; 2025 Bhargav Patel</p>
-  </footer>
-
-  <script src="animations.js"></script>
-  <script>
-    const text = "My Projects";
-    const speed = 100;
-    let i = 0;
-
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typed-name").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fdfdfd;
+      font-family: 'Fira Code', monospace;
+      margin: 0;
+      padding: 0 20px;
+      color: #333;
     }
 
-    window.onload = typeWriter;
-  </script>
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+    }
+
+    .typing-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      color: #e67e22;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid #e67e22;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #e67e22; }
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="typing-title">My Project Portfolio</div>
+
+    <h2>Machine Learning Projects</h2>
+    <ul>
+      <li><strong>Credit Card Categorization:</strong> Classified credit scores into Good, Standard, and Poor using Decision Tree, KNN, and Naive Bayes. Included training, feature selection, cross-validation, and confusion matrix evaluation.</li>
+      <li><strong>Weather Predictor:</strong> Built a regression-based model in Python to forecast weather from past meteorological data, including preprocessing, feature scaling, and test-set evaluation.</li>
+      <li><strong>Predict Salary:</strong> Implemented KNN, Decision Tree, and Random Forest to determine if salary is ≤ 50000 or higher based on input data.</li>
+    </ul>
+
+    <h2>Data Structures & Algorithms Projects</h2>
+    <ul>
+      <li><strong>15 Puzzle Solver:</strong> Implemented A* algorithm to solve the 15 puzzle efficiently.</li>
+      <li><strong>Huffman Coding Assignment:</strong>
+        <ul>
+          <li>frequency_table(st): Prints frequency of each character in the string.</li>
+          <li>Huffman_code(st): Builds Huffman tree and generates codes.</li>
+          <li>Huffman_encode(st, codes): Encodes the string using Huffman codes.</li>
+          <li>Huffman_tree(L): Reconstructs Huffman tree from character-code list.</li>
+          <li>Huffman_decode(bst, tree): Decodes encoded binary string using Huffman tree.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Compiler Projects</h2>
+    <ul>
+      <li><strong>Lexical Analyzer:</strong> Tokenizes source code input using finite automata and token classes.</li>
+      <li><strong>Parser (Recursive-Descent):</strong> Parses a simple Pascal-like language using EBNF grammar and prints error messages on failure.</li>
+      <li><strong>Interpreter:</strong> Executes the parsed program with support for expressions, variable storage, write/writeln, if/else and semantic error handling.</li>
+    </ul>
+
+    <h2>Game Development Projects</h2>
+    <ul>
+      <li><strong>3D Games in Unity:</strong> Designed and developed 3D games as part of Unity and VR course.</li>
+      <li><strong>VR Pedestrian Simulation:</strong> Built as capstone project to simulate VR pedestrian navigation with immersive controls.</li>
+      <li><strong>Unity Certificate:</strong> Successfully earned certification for Unity and VR game development.</li>
+    </ul>
+  </div>
 </body>
 </html>
