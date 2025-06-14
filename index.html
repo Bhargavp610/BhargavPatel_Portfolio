@@ -5,9 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bhargav Patel | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg-color: #0f0f0f;
+      --primary-color: #ff6ec7; /* changed from blue to hot pink */
+      --secondary-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #1ed760;
+      --font-family: 'Fira Code', monospace;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header, nav {
+      background-color: var(--secondary-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary-color);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: growIn 0.8s ease forwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.3s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    section:nth-child(4) { animation-delay: 0.9s; }
+
+    @keyframes growIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .typing-text {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--accent-color);
+      width: fit-content;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 250px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(30, 215, 96, 0.3);
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .icon-link {
+      margin-right: 1rem;
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .icon-link:hover {
+      transform: scale(1.2);
+      color: var(--primary-color);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,7 +132,7 @@
   </header>
 
   <main>
-    <section class="intro animate">
+    <section class="intro">
       <h1 class="typing-text">Hi, I'm <span id="typed-name"></span></h1>
       <p>I’m passionate about pushing boundaries in Computer Science and applying my knowledge to support organizational success.</p>
       <div class="social-icons">
@@ -31,7 +141,7 @@
       </div>
     </section>
 
-    <section class="profile-section animate">
+    <section class="profile-section">
       <div class="profile-text">
         <h2>Profile</h2>
         <p>I want to work in a dynamic, competitive atmosphere where I can grow professionally and contribute to organizational success using my knowledge of Computer Science.</p>
@@ -41,7 +151,7 @@
       </div>
     </section>
 
-    <section class="skills-section animate">
+    <section class="skills-section">
       <div class="skills-image">
         <img src="Portfolio_pic2.JPEG" alt="Skills Photo" />
       </div>
@@ -55,7 +165,7 @@
       </div>
     </section>
 
-    <section class="certification-section animate">
+    <section class="certification-section">
       <div class="certification-text">
         <h2>Certifications</h2>
         <ul>
@@ -75,6 +185,18 @@
     <p>&copy; 2025 Bhargav Patel</p>
   </footer>
 
-  <script src="animation.js"></script>
+  <script>
+    const text = "Bhargav Patel";
+    const speed = 100;
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typed-name").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
