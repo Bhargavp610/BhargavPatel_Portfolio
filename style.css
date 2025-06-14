@@ -17,6 +17,7 @@
     color: var(--text-color);
     font-family: var(--font-family);
     line-height: 1.6;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   }
   
   a {
@@ -76,6 +77,17 @@
   
   section {
     margin-bottom: 3rem;
+
+    /* Start hidden and moved down */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  /* When JS adds this class, show section with animation */
+  section.animate-slide-up {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .resume-download {
@@ -108,20 +120,6 @@
     box-shadow: 0 8px 20px rgba(108, 99, 255, 0.6);
   }
   
-  /* Animations */
-  .animate-fade-in {
-    animation: fadeIn 1s ease forwards;
-  }
-  
-  .animate-slide-up {
-    opacity: 0;
-    animation: slideUp 0.8s ease forwards;
-  }
-  
-  .animate-slide-up.delay-1 {
-    animation-delay: 0.5s;
-  }
-  
   /* Responsive */
   @media (max-width: 768px) {
     .nav-bar ul {
@@ -142,81 +140,63 @@
     }
   }
   
-  /* Keyframes */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  /* Profile and skills sections */
+  .profile-section,
+  .skills-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
   }
   
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
+  .profile-section .profile-text,
+  .skills-section .skills-text {
+    flex: 1;
   }
-
-.profile-section,
-.skills-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.profile-section .profile-text,
-.skills-section .skills-text {
-  flex: 1;
-}
-
-.profile-section .profile-image,
-.skills-section .skills-image {
-  flex: 1;
-  text-align: center;
-}
-
-.profile-section img,
-.skills-section img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
-}
-
-/* Dark background gradient */
-body {
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-}
-
-/* Typing name styling */
-h1.typing-text {
-  font-family: 'Fira Code', monospace;
-  font-size: 2.5rem;
-  color: var(--accent-color);
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid var(--accent-color);
-  width: fit-content;
-}
-
-/* Make paragraph slightly larger */
-p {
-  font-size: 1.1rem;
-}
-
-/* Social media icons */
-.social-icons {
-  margin-top: 1rem;
-}
-
-.icon-link {
-  margin-right: 1.2rem;
-  font-size: 2rem;
-  color: var(--accent-color);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.icon-link:hover {
-  color: var(--primary-color);
-  transform: scale(1.2);
-}
-
-
   
+  .profile-section .profile-image,
+  .skills-section .skills-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profile-section img,
+  .skills-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+  }
+  
+  /* Typing name styling */
+  h1.typing-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-color);
+    width: fit-content;
+  }
+  
+  /* Paragraph font size */
+  p {
+    font-size: 1.1rem;
+  }
+  
+  /* Social media icons */
+  .social-icons {
+    margin-top: 1rem;
+  }
+  
+  .icon-link {
+    margin-right: 1.2rem;
+    font-size: 2rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .icon-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+  }
