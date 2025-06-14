@@ -180,4 +180,43 @@
   box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
 }
 
+/* Dark background gradient */
+body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+/* Typing name styling */
+h1.typing-text {
+  font-family: 'Fira Code', monospace;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent-color);
+  width: fit-content;
+}
+
+/* Make paragraph slightly larger */
+p {
+  font-size: 1.1rem;
+}
+
+/* Social media icons */
+.social-icons {
+  margin-top: 1rem;
+}
+
+.icon-link {
+  margin-right: 1.2rem;
+  font-size: 2rem;
+  color: var(--accent-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+
   
