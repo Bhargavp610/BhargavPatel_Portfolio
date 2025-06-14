@@ -4,11 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Bhargav Patel</title>
-
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,53 +20,27 @@
 
   <main>
     <section class="projects animate-fade-in">
-      <h1 class="typing-text" id="typed-name"></h1>
-      
-      <article class="project-card">
-        <h2>Lexical Analyzer (C++)</h2>
-        <p>Built a compiler component to tokenize input using regex and finite automata. Detected syntax errors efficiently.</p>
-      </article>
-      <article class="project-card">
-        <h2>15-Puzzle Solver (C)</h2>
-        <p>Developed an A* search algorithm with Manhattan Distance heuristic for optimized pathfinding in large state spaces.</p>
-      </article>
-      <article class="project-card">
-        <h2>Stock Tracker (Python, PHP, MongoDB)</h2>
-        <p>Scraped live stock data and stored it in MongoDB with a PHP backend for real-time monitoring.</p>
-      </article>
-      <article class="project-card">
-        <h2>Advanced Database System</h2>
-        <p>Designed and queried complex PL/SQL queries and converted XML to JSON and vice versa.</p>
-      </article>
-      <article class="project-card">
-        <h2>3D Game Projects (Unity, C#)</h2>
-        <p>Created games featuring realistic movement and physics using animation blending and IK.</p>
-      </article>
+      <h1>My Projects</h1>
+      <p>Here are some projects I have worked on:</p>
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A brief description of Project One.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>A brief description of Project Two.</p>
+      </div>
+      <!-- Add more projects as needed -->
     </section>
   </main>
 
   <footer>
-    <a href="Bhargav_Patel_Resume.pdf" download class="resume-download">
+    <a href="BhargavPatel_Resume.pdf" download class="resume-download">
       📄 Download My Resume (PDF)
     </a>
     <p>&copy; 2025 Bhargav Patel</p>
   </footer>
 
   <script src="animations.js"></script>
-  <script>
-    const text = "My Projects";
-    const speed = 100;
-    let i = 0;
-
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typed-name").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-
-    window.onload = typeWriter;
-  </script>
 </body>
 </html>
