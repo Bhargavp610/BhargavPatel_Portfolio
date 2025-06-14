@@ -7,18 +7,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Additional styles for typed animation & layout */
     body {
       font-family: 'Poppins', sans-serif;
-      background: #1a1a40;
-      color: #e0e0e0;
+      background: #0d1117;
+      color: #c9d1d9;
       margin: 0; padding: 0;
     }
 
     .nav-bar {
       display: flex;
       justify-content: flex-end;
-      background: #2e2e66;
+      background: #161b22;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
@@ -26,7 +25,7 @@
     }
 
     .nav-bar a {
-      color: #6c63ff;
+      color: #58a6ff;
       text-decoration: none;
       font-weight: 700;
       margin-left: 2rem;
@@ -34,7 +33,7 @@
     }
 
     .nav-bar a.active {
-      border-bottom: 2px solid #6c63ff;
+      border-bottom: 2px solid #58a6ff;
     }
 
     main {
@@ -45,18 +44,17 @@
 
     h1, h2 {
       font-family: 'Roboto Mono', monospace;
-      color: #6c63ff;
+      color: #58a6ff;
       font-weight: 700;
       margin-bottom: 1rem;
-      min-height: 2.5rem; /* reserve space for typing animation */
+      min-height: 2.5rem;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid #6c63ff;
+      border-right: 3px solid #58a6ff;
       width: 0;
       animation: typing 2.5s steps(40, end) forwards, blink 0.75s step-end infinite;
     }
 
-    /* Delay typing for each heading */
     h1 { animation-delay: 0s, 2.5s; }
     h2 { animation-delay: 2.6s, 5.1s; }
 
@@ -66,7 +64,7 @@
     }
     @keyframes blink {
       from, to { border-color: transparent }
-      50% { border-color: #6c63ff; }
+      50% { border-color: #58a6ff; }
     }
 
     .project-group {
@@ -74,7 +72,7 @@
     }
 
     .project-group h3 {
-      color: #00ffd1;
+      color: #8b949e;
       margin-bottom: 0.75rem;
       font-weight: 700;
       font-size: 1.25rem;
@@ -87,71 +85,10 @@
     }
 
     .project-item strong {
-      color: #6c63ff;
+      color: #58a6ff;
     }
 
-    /* Profile summary and pic layout */
-    .profile-summary-section {
-      display: flex;
-      align-items: center;
-      margin-bottom: 3rem;
-      gap: 2rem;
-    }
-
-    .profile-summary-text {
-      flex: 1;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 480px;
-    }
-
-    .profile-summary-image {
-      flex: 1;
-      text-align: right;
-    }
-
-    .profile-summary-image img {
-      width: 280px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #6c63ff;
-    }
-
-    /* Certificate section */
-    .certificate-section {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .certificate-section h2 {
-      animation: typing 2.5s steps(40, end) forwards, blink 0.75s step-end infinite;
-      animation-delay: 6s, 8.5s;
-      color: #6c63ff;
-      font-family: 'Roboto Mono', monospace;
-      margin-bottom: 1rem;
-      min-height: 2.5rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #6c63ff;
-      width: 0;
-      margin-bottom: 1.5rem;
-    }
-
-    .certificate-section img {
-      max-width: 100%;
-      max-height: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffd1;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .profile-summary-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .profile-summary-image {
-        text-align: center;
-      }
       h1, h2 {
         border-right: none;
         animation: none;
@@ -170,20 +107,6 @@
   </header>
 
   <main>
-    <section class="profile-summary-section">
-      <div class="profile-summary-text">
-        <h1>Profile Summary</h1>
-        <p>
-          In order to progress professionally and be inspired to push the boundaries
-          of Computer Science, I want to work in a dynamic, competitive atmosphere.
-          I’m excited about using my knowledge to support the organization's success.
-        </p>
-      </div>
-      <div class="profile-summary-image">
-        <img src="Portfolio_pic1.JPEG" alt="Profile Photo" />
-      </div>
-    </section>
-
     <section class="project-group">
       <h2>💡 Machine Learning Projects</h2>
       <div class="project-item">
@@ -242,11 +165,6 @@
         <strong>Dynamic Programming Assignment</strong><br />
         Implemented frequency table, Huffman coding, encoding, decoding, and Huffman tree construction functions in Python as part of a group programming assignment.
       </div>
-    </section>
-
-    <section class="certificate-section">
-      <h2>🎓 Senior Year Capstone Project Certificate</h2>
-      <img src="capstone_certificate.jpg" alt="Senior Year Capstone Certificate" />
     </section>
   </main>
 </body>
