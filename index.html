@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bhargav Patel | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome for icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -23,20 +23,21 @@
 
   <main>
     <section class="intro animate-fade-in">
-    <h1 class="typing-text">Hi, I'm <span id="typed-name"></span></h1>
-    <p>
-      I’m passionate about pushing boundaries in Computer Science and
-      applying my knowledge to support organizational success.
-    </p>
-    <div class="social-icons">
-      <a href="https://github.com/your-github-username" target="_blank" class="icon-link">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/your-linkedin-id" target="_blank" class="icon-link">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
-  </section>
+      <h1 class="typing-text">Hi, I'm <span id="typed-name"></span></h1>
+      <p>
+        I’m passionate about pushing boundaries in Computer Science and
+        applying my knowledge to support organizational success.
+      </p>
+      <div class="social-icons">
+        <a href="https://github.com/your-github-username" target="_blank" class="icon-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/your-linkedin-id" target="_blank" class="icon-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </section>
+
     <section class="profile-section animate-slide-up">
       <div class="profile-text">
         <h2>Profile</h2>
@@ -74,22 +75,19 @@
   </footer>
 
   <script>
-  const text = "Bhargav Patel";
-  const speed = 100;
-  let i = 0;
+    const text = "Bhargav Patel";
+    const speed = 100;
+    let i = 0;
 
-  function typeWriter() {
-    if (i < text.length) {
-      document.getElementById("typed-name").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typed-name").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
     }
-  }
 
-  window.onload = typeWriter;
-</script>
-</body>
-</html>
-
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
