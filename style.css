@@ -152,3 +152,15 @@ section {
   from { opacity: 0; transform: translateY(20px);}
   to { opacity: 1; transform: translateY(0);}
 }
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideRight 1s forwards;
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
