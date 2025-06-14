@@ -1,12 +1,16 @@
-// Simple JS to add animation classes on page load (optional)
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.animate-fade-in').forEach(el => {
-    el.style.opacity = 0;
-    el.classList.add('animate-fade-in');
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('animate-slide-up');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
   });
 
-  document.querySelectorAll('.animate-slide-up').forEach(el => {
-    el.style.opacity = 0;
-    el.classList.add('animate-slide-up');
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
   });
 });
