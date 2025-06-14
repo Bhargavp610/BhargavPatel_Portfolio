@@ -4,53 +4,250 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Bhargav Patel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Additional styles for typed animation & layout */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1a1a40;
+      color: #e0e0e0;
+      margin: 0; padding: 0;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: flex-end;
+      background: #2e2e66;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-bar a {
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .nav-bar a.active {
+      border-bottom: 2px solid #6c63ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2 {
+      font-family: 'Roboto Mono', monospace;
+      color: #6c63ff;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      min-height: 2.5rem; /* reserve space for typing animation */
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #6c63ff;
+      width: 0;
+      animation: typing 2.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    /* Delay typing for each heading */
+    h1 { animation-delay: 0s, 2.5s; }
+    h2 { animation-delay: 2.6s, 5.1s; }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #6c63ff; }
+    }
+
+    .project-group {
+      margin-bottom: 3rem;
+    }
+
+    .project-group h3 {
+      color: #00ffd1;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .project-item {
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .project-item strong {
+      color: #6c63ff;
+    }
+
+    /* Profile summary and pic layout */
+    .profile-summary-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+      gap: 2rem;
+    }
+
+    .profile-summary-text {
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 480px;
+    }
+
+    .profile-summary-image {
+      flex: 1;
+      text-align: right;
+    }
+
+    .profile-summary-image img {
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #6c63ff;
+    }
+
+    /* Certificate section */
+    .certificate-section {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .certificate-section h2 {
+      animation: typing 2.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+      animation-delay: 6s, 8.5s;
+      color: #6c63ff;
+      font-family: 'Roboto Mono', monospace;
+      margin-bottom: 1rem;
+      min-height: 2.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #6c63ff;
+      width: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .certificate-section img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffd1;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .profile-summary-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-summary-image {
+        text-align: center;
+      }
+      h1, h2 {
+        border-right: none;
+        animation: none;
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav class="nav-bar">
-      <a href="index.html" class="logo">Bhargav Patel</a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="projects animate-fade-in">
-      <h1>My Projects</h1>
-      <article class="project-card">
-        <h2>Lexical Analyzer (C++)</h2>
-        <p>Built a compiler component to tokenize input using regex and finite automata. Detected syntax errors efficiently.</p>
-      </article>
-      <article class="project-card">
-        <h2>15-Puzzle Solver (C)</h2>
-        <p>Developed an A* search algorithm with Manhattan Distance heuristic for optimized pathfinding in large state spaces.</p>
-      </article>
-      <article class="project-card">
-        <h2>Stock Tracker (Python, PHP, MongoDB)</h2>
-        <p>Scraped live stock data and stored it in MongoDB with a PHP backend for real-time monitoring.</p>
-      </article>
-      <article class="project-card">
-        <h2>Advanced Database System</h2>
-        <p>Designed and queried complex PL/SQL queries and converted XML to JSON and vice versa.</p>
-      </article>
-      <article class="project-card">
-        <h2>3D Game Projects (Unity, C#)</h2>
-        <p>Created games featuring realistic movement and physics using animation blending and IK.</p>
-      </article>
+    <section class="profile-summary-section">
+      <div class="profile-summary-text">
+        <h1>Profile Summary</h1>
+        <p>
+          In order to progress professionally and be inspired to push the boundaries
+          of Computer Science, I want to work in a dynamic, competitive atmosphere.
+          I’m excited about using my knowledge to support the organization's success.
+        </p>
+      </div>
+      <div class="profile-summary-image">
+        <img src="Portfolio_pic1.JPEG" alt="Profile Photo" />
+      </div>
+    </section>
+
+    <section class="project-group">
+      <h2>💡 Machine Learning Projects</h2>
+      <div class="project-item">
+        <strong>Credit Card Categorization</strong><br />
+        Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.
+      </div>
+      <div class="project-item">
+        <strong>Weather Predictor</strong><br />
+        Forecasts weather using regression models. Handles data preparation, feature scaling, and test-set evaluation with excellent interpretability.
+      </div>
+      <div class="project-item">
+        <strong>Predict Salary</strong><br />
+        Predicts if salary is above or below $50,000 using KNN, Decision Tree, and Random Forest.
+      </div>
+    </section>
+
+    <section class="project-group">
+      <h2>🔧 Compiler Projects</h2>
+      <div class="project-item">
+        <strong>Lexical Analyzer</strong><br />
+        Developed a lexical analyzer for tokenizing input for a Pascal-like language.
+      </div>
+      <div class="project-item">
+        <strong>Building a Parser</strong><br />
+        Recursive-descent parser for a Pascal-like language using EBNF grammar. Includes semantic checks, error messages, and syntax validation.
+      </div>
+      <div class="project-item">
+        <strong>Building an Interpreter</strong><br />
+        Executes the Pascal-like language with type checking, symbol tables, expression evaluation, and runtime error handling.
+      </div>
+    </section>
+
+    <section class="project-group">
+      <h2>🎮 Game Development Projects</h2>
+      <div class="project-item">
+        <strong>3D Unity Games (3–5 Projects)</strong><br />
+        Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.
+      </div>
+      <div class="project-item">
+        <strong>VR Pedestrian Safety Simulation (Capstone)</strong><br />
+        Designed a VR simulation for pedestrian safety using Unity. Integrated interactive elements and immersive user experience.
+      </div>
+      <div class="project-item">
+        <strong>Unity Certification</strong><br />
+        Earned certification in Unity Development validating 3D and VR project skills.
+      </div>
+    </section>
+
+    <section class="project-group">
+      <h2>📚 Data Structures & Algorithms (DSA) Projects</h2>
+      <div class="project-item">
+        <strong>15 Block Puzzle Using A* Algorithm</strong><br />
+        Developed an A* search algorithm solution to solve the 15-block puzzle problem efficiently.
+      </div>
+      <div class="project-item">
+        <strong>Dynamic Programming Assignment</strong><br />
+        Implemented frequency table, Huffman coding, encoding, decoding, and Huffman tree construction functions in Python as part of a group programming assignment.
+      </div>
+    </section>
+
+    <section class="certificate-section">
+      <h2>🎓 Senior Year Capstone Project Certificate</h2>
+      <img src="capstone_certificate.jpg" alt="Senior Year Capstone Certificate" />
     </section>
   </main>
-
-  <footer>
-    <a href="BhargavPatel_Resume.pdf" download class="resume-download">
-      📄 Download My Resume (PDF)
-    </a>
-    <p>&copy; 2025 Bhargav Patel</p>
-  </footer>
-
-  <script src="animations.js"></script>
 </body>
 </html>
