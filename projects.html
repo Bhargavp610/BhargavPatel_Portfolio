@@ -3,91 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects - Bhargav Patel</title>
+  <title>Projects | Bhargav Patel</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css" />
-  <script defer src="animation.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="nav-bar">
+      <a href="index.html" class="logo">Bhargav Patel</a>
       <ul>
-        <li><a href="index.html" class="blue-text">Home</a></li>
-        <li><a href="project.html" class="blue-text">Projects</a></li>
-        <li><a href="#contact" class="blue-text">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="projects-section">
-    <h2 class="section-title typing">💡 Machine Learning Projects</h2>
-
-    <div class="project-item">
-      <h3>Credit Card Categorization</h3>
-      <p>Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>Weather Predictor</h3>
-      <p>Forecasts weather using regression models. Handles data preparation, feature scaling, and test-set evaluation with excellent interpretability.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>Predict Salary</h3>
-      <p>Predicts if salary is above or below $50,000 using KNN, Decision Tree, and Random Forest.</p>
-    </div>
-
-    <h2 class="section-title typing">🔧 Compiler Projects</h2>
-
-    <div class="project-item">
-      <h3>Building a Lexical Analyzer</h3>
-      <p>Implemented a lexical analyzer for a Pascal-like language supporting tokenizing with descriptive error handling.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>Building a Parser</h3>
-      <p>Recursive-descent parser for a Pascal-like language using EBNF grammar. Includes semantic checks, error messages, and syntax validation.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>Building an Interpreter</h3>
-      <p>Executes the Pascal-like language with type checking, symbol tables, expression evaluation, and runtime error handling.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>Huffman Coding Assignment</h3>
-      <p>
-        Group project involving:
-        <ul>
-          <li>Frequency table construction for characters.</li>
-          <li>Building Huffman trees and generating codes.</li>
-          <li>Encoding and decoding strings using Huffman coding.</li>
-        </ul>
-      </p>
-    </div>
-
-    <div class="project-item">
-      <h3>15-Puzzle Solver (A* Algorithm)</h3>
-      <p>Implemented the 15-puzzle solver using the A* algorithm with Manhattan distance heuristic, showcasing problem solving and heuristic search skills.</p>
-    </div>
-
-    <h2 class="section-title typing">🎮 Game Development Projects</h2>
-
-    <div class="project-item">
-      <h3>3D Unity Games (3–5 Projects)</h3>
-      <p>Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>VR Pedestrian Safety Simulation (Capstone)</h3>
-      <p>Designed a VR simulation for pedestrian safety using Unity. Integrated interactive elements and immersive user experience.</p>
-    </div>
-
-    <div class="project-item">
-      <h3>Unity Certification</h3>
-      <p>Earned certification in Unity Development validating 3D and VR project skills, awarded by my college for senior year capstone.</p>
-    </div>
-
+  <main>
+    <section class="projects animate-fade-in">
+      <h1 class="typing-text" id="typed-name"></h1>
+      
+      <article class="project-card">
+        <h2>Lexical Analyzer (C++)</h2>
+        <p>Built a compiler component to tokenize input using regex and finite automata. Detected syntax errors efficiently.</p>
+      </article>
+      <article class="project-card">
+        <h2>15-Puzzle Solver (C)</h2>
+        <p>Developed an A* search algorithm with Manhattan Distance heuristic for optimized pathfinding in large state spaces.</p>
+      </article>
+      <article class="project-card">
+        <h2>Stock Tracker (Python, PHP, MongoDB)</h2>
+        <p>Scraped live stock data and stored it in MongoDB with a PHP backend for real-time monitoring.</p>
+      </article>
+      <article class="project-card">
+        <h2>Advanced Database System</h2>
+        <p>Designed and queried complex PL/SQL queries and converted XML to JSON and vice versa.</p>
+      </article>
+      <article class="project-card">
+        <h2>3D Game Projects (Unity, C#)</h2>
+        <p>Created games featuring realistic movement and physics using animation blending and IK.</p>
+      </article>
+    </section>
   </main>
+
+  <footer>
+    <a href="Bhargav_Patel_Resume.pdf" download class="resume-download">
+      📄 Download My Resume (PDF)
+    </a>
+    <p>&copy; 2025 Bhargav Patel</p>
+  </footer>
+
+  <script src="animations.js"></script>
+  <script>
+    const text = "My Projects";
+    const speed = 100;
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typed-name").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
