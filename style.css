@@ -165,32 +165,27 @@ section {
   }
 }
 
- .project-content {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  padding: 0;
-  transition: all 0.3s ease;
-}
+.project-content {
+    display: none;
+    position: relative;
+    background: #1c1f26;
+    border: 1px solid #30363d;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+  }
 
-.project-content.show {
-  opacity: 1;
-  max-height: 1000px;
-  padding: 1rem;
-}
+  .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    color: #c9d1d9;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+  }
 
-.close-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: none;
-  color: #c9d1d9;
-  font-size: 1.5rem;
-  border: none;
-  cursor: pointer;
-}
-
-.collapsible-title {
-  cursor: pointer;
-  user-select: none;
-}
+  .collapsible-title {
+    cursor: pointer;
+  }
