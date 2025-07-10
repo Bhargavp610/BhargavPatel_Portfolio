@@ -13,57 +13,52 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 
-  // Handle project section expand/collapse
   const sections = document.querySelectorAll('.project-content');
   const triggers = document.querySelectorAll('.collapsible-title');
   const closeButtons = document.querySelectorAll('.close-btn');
 
+  // Fix #1: Binding targetId inside event handler
   triggers.forEach(trigger => {
-  trigger.setAttribute('tabindex', '0'); // accessibility
-  const targetId = trigger.dataset.target;
+    trigger.setAttribute('tabindex', '0');
 
-  const activate = () => {
-    sections.forEach(sec => {
-      if (sec.id === targetId) {
-        sec.classList.add('show');
-        sec.setAttribute('aria-hidden', 'false');
-      } else {
-        sec.classList.remove('show');
-        sec.setAttribute('aria-hidden', 'true');
+    trigger.addEventListener('click', () => {
+      const targetId = trigger.dataset.target;
+      sections.forEach(sec => {
+        const shouldShow = sec.id === targetId;
+        sec.classList.toggle('show', shouldShow);
+        sec.setAttribute('aria-hidden', String(!shouldShow));
+      });
+    });
+
+    trigger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger.click(); // reuse click logic
       }
     });
-  };
-
-  trigger.addEventListener('click', activate);
-  trigger.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      activate();
-    }
   });
-});
 
-
+  // Fix #2: Close button actually hides content
   closeButtons.forEach(btn => {
-  btn.addEventListener('click', e => {
-    const section = e.target.closest('.project-content');
-    if (section) {
-      section.classList.remove('show');
-      section.setAttribute('aria-hidden', 'true');
+    btn.addEventListener('click', e => {
+      const section = e.target.closest('.project-content');
+      if (section) {
+        section.classList.remove('show');
+        section.setAttribute('aria-hidden', 'true');
+      }
+    });
+  });
+
+  // Optional: Click outside to close all
+  document.addEventListener('click', e => {
+    if (
+      ![...triggers].some(t => t.contains(e.target)) &&
+      ![...sections].some(s => s.contains(e.target))
+    ) {
+      sections.forEach(sec => {
+        sec.classList.remove('show');
+        sec.setAttribute('aria-hidden', 'true');
+      });
     }
   });
-});
-
-
-  // Optional: Click outside to close any open section
-  document.addEventListener('click', e => {
-  if (
-    ![...triggers].some(t => t.contains(e.target)) &&
-    ![...sections].some(s => s.contains(e.target))
-  ) {
-    sections.forEach(sec => {
-      sec.classList.remove('show');
-      sec.setAttribute('aria-hidden', 'true');
-    });
-  }
 });
