@@ -165,31 +165,32 @@ section {
   }
 }
 
-  .close-btn {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: none;
-    color: #c9d1d9;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-  }
-
-  .collapsible-title {
-    cursor: pointer;
-  }
-
-.project-content {
+ .project-content {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
+  padding: 0;
   transition: all 0.3s ease;
 }
 
 .project-content.show {
   opacity: 1;
-  max-height: 1000px; 
+  max-height: 1000px;
+  padding: 1rem;
 }
 
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  color: #c9d1d9;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
 
+.collapsible-title {
+  cursor: pointer;
+  user-select: none;
+}
