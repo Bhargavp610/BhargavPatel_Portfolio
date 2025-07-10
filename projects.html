@@ -69,6 +69,12 @@
 
     .project-group {
       margin-bottom: 3rem;
+      position: relative; /* for close button */
+    }
+
+    .project-group h2 {
+      cursor: pointer;
+      user-select: none;
     }
 
     .project-group h3 {
@@ -86,6 +92,34 @@
 
     .project-item strong {
       color: #58a6ff;
+    }
+
+    .project-content {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0 1rem;
+      margin-top: 0.5rem;
+      border-left: 3px solid #58a6ff;
+    }
+
+    .project-content.show {
+      opacity: 1;
+      max-height: 1000px; /* big enough */
+      padding: 1rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: none;
+      color: #c9d1d9;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -106,119 +140,95 @@
     </nav>
   </header>
 
-<main>
-  <section class="project-group">
-    <h2 class="collapsible-title" data-target="web-dev" role="button" tabindex="0">🌐 Web Development Projects</h2>
-    <div class="project-content" id="web-dev">
-      <button class="close-btn">×</button>
-      <div class="project-item">
-        <strong>Restaurant Website</strong><br />
-      Designed and built a multi-page restaurant website with sections for menu, contact, and hours. Practiced layout, typography, and responsive styling.
+  <main>
+    <section class="project-group">
+      <h2 class="collapsible-title" data-target="web-dev" role="button" tabindex="0">🌐 Web Development Projects</h2>
+      <div class="project-content" id="web-dev" aria-hidden="true">
+        <button class="close-btn" aria-label="Close Web Development Projects">×</button>
+        <div class="project-item">
+          <strong>Restaurant Website</strong><br />
+          Designed and built a multi-page restaurant website with sections for menu, contact, and hours. Practiced layout, typography, and responsive styling.
+        </div>
+        <div class="project-item">
+          <strong>Netflix Landing Page Clone</strong><br />
+          Recreated the Netflix homepage with responsive layout and styled components. Focused on visual fidelity and clean HTML/CSS structure.
+        </div>
       </div>
-    <div class="project-item">
-      <strong>Netflix Landing Page Clone</strong><br />
-      Recreated the Netflix homepage with responsive layout and styled components. Focused on visual fidelity and clean HTML/CSS structure.
-  </div>
-</div>
+    </section>
 
-  </section>
+    <section class="project-group">
+      <h2 class="collapsible-title" data-target="ml-projects" role="button" tabindex="0">💡 Machine Learning Projects</h2>
+      <div class="project-content" id="ml-projects" aria-hidden="true">
+        <button class="close-btn" aria-label="Close Machine Learning Projects">×</button>
+        <div class="project-item">
+          <strong>Credit Card Categorization</strong><br />
+          Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.
+        </div>
+        <div class="project-item">
+          <strong>Weather Predictor</strong><br />
+          Forecasts weather using regression models. Handles data preparation, feature scaling, and test-set evaluation with excellent interpretability.
+        </div>
+        <div class="project-item">
+          <strong>Predict Salary</strong><br />
+          Predicts if salary is above or below $50,000 using KNN, Decision Tree, and Random Forest.
+        </div>
+      </div>
+    </section>
 
-  <section class="project-group">
-    <h2 class="collapsible-title" data-target="ml-projects" role="button" tabindex="0">💡 Machine Learning Projects</h2>
-    <div class="project-content" id="ml-projects">
-      <button class="close-btn">×</button>
-      <div class="project-item">
-        <strong>Credit Card Categorization</strong><br />
-        Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.
+    <section class="project-group">
+      <h2 class="collapsible-title" data-target="compiler-projects" role="button" tabindex="0">🔧 Compiler Projects</h2>
+      <div class="project-content" id="compiler-projects" aria-hidden="true">
+        <button class="close-btn" aria-label="Close Compiler Projects">×</button>
+        <div class="project-item">
+          <strong>Lexical Analyzer</strong><br />
+          Developed a lexical analyzer for tokenizing input for a Pascal-like language.
+        </div>
+        <div class="project-item">
+          <strong>Building a Parser</strong><br />
+          Recursive-descent parser for a Pascal-like language using EBNF grammar. Includes semantic checks, error messages, and syntax validation.
+        </div>
+        <div class="project-item">
+          <strong>Building an Interpreter</strong><br />
+          Executes the Pascal-like language with type checking, symbol tables, expression evaluation, and runtime error handling.
+        </div>
       </div>
-      <div class="project-item">
-        <strong>Weather Predictor</strong><br />
-        Forecasts weather using regression models. Handles data preparation, feature scaling, and test-set evaluation with excellent interpretability.
-      </div>
-      <div class="project-item">
-        <strong>Predict Salary</strong><br />
-        Predicts if salary is above or below $50,000 using KNN, Decision Tree, and Random Forest.
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="project-group">
-    <h2 class="collapsible-title" data-target="compiler-projects" role="button" tabindex="0">🔧 Compiler Projects</h2>
-    <div class="project-content" id="compiler-projects">
-      <button class="close-btn">×</button>
-      <div class="project-item">
-        <strong>Lexical Analyzer</strong><br />
-        Developed a lexical analyzer for tokenizing input for a Pascal-like language.
+    <section class="project-group">
+      <h2 class="collapsible-title" data-target="game-dev" role="button" tabindex="0">🎮 Game Development Projects</h2>
+      <div class="project-content" id="game-dev" aria-hidden="true">
+        <button class="close-btn" aria-label="Close Game Development Projects">×</button>
+        <div class="project-item">
+          <strong>3D Unity Games (3–5 Projects)</strong><br />
+          Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.
+        </div>
+        <div class="project-item">
+          <strong>VR Pedestrian Safety Simulation (Capstone)</strong><br />
+          Designed a VR simulation for pedestrian safety using Unity. Integrated interactive elements and immersive user experience.
+        </div>
+        <div class="project-item">
+          <strong>Unity Certification</strong><br />
+          Earned certification in Unity Development validating 3D and VR project skills.
+        </div>
       </div>
-      <div class="project-item">
-        <strong>Building a Parser</strong><br />
-        Recursive-descent parser for a Pascal-like language using EBNF grammar. Includes semantic checks, error messages, and syntax validation.
-      </div>
-      <div class="project-item">
-        <strong>Building an Interpreter</strong><br />
-        Executes the Pascal-like language with type checking, symbol tables, expression evaluation, and runtime error handling.
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="project-group">
-    <h2 class="collapsible-title" data-target="game-dev" role="button" tabindex="0">🎮 Game Development Projects</h2>
-    <div class="project-content" id="game-dev">
-      <button class="close-btn">×</button>
-      <div class="project-item">
-        <strong>3D Unity Games (3–5 Projects)</strong><br />
-        Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.
+    <section class="project-group">
+      <h2 class="collapsible-title" data-target="algo-projects" role="button" tabindex="0">🧠 Algorithms & Optimization</h2>
+      <div class="project-content" id="algo-projects" aria-hidden="true">
+        <button class="close-btn" aria-label="Close Algorithms & Optimization Projects">×</button>
+        <div class="project-item">
+          <strong>15 Block Puzzle Using A* Algorithm</strong><br />
+          Developed an A* search algorithm solution to solve the 15-block puzzle problem efficiently.
+        </div>
+        <div class="project-item">
+          <strong>Dynamic Programming Assignment</strong><br />
+          Implemented frequency table, Huffman coding, encoding, decoding, and Huffman tree construction functions in Python as part of a group programming assignment.
+        </div>
       </div>
-      <div class="project-item">
-        <strong>VR Pedestrian Safety Simulation (Capstone)</strong><br />
-        Designed a VR simulation for pedestrian safety using Unity. Integrated interactive elements and immersive user experience.
-      </div>
-      <div class="project-item">
-        <strong>Unity Certification</strong><br />
-        Earned certification in Unity Development validating 3D and VR project skills.
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="project-group">
-    <h2 class="collapsible-title" data-target="algo-projects" role="button" tabindex="0">🧠 Algorithms & Optimization</h2>
-    <div class="project-content" id="algo-projects">
-      <button class="close-btn">×</button>
-      <div class="project-item">
-        <strong>15 Block Puzzle Using A* Algorithm</strong><br />
-        Developed an A* search algorithm solution to solve the 15-block puzzle problem efficiently.
-      </div>
-      <div class="project-item">
-        <strong>Dynamic Programming Assignment</strong><br />
-        Implemented frequency table, Huffman coding, encoding, decoding, and Huffman tree construction functions in Python as part of a group programming assignment.
-      </div>
-    </div>
-  </section>
-</main>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.project-content');
-    const triggers = document.querySelectorAll('.collapsible-title');
-    const closeButtons = document.querySelectorAll('.close-btn');
-
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const targetId = trigger.dataset.target;
-        sections.forEach(sec => {
-          if (sec.id === targetId) {
-            sec.style.display = 'block';
-          } else {
-            sec.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    closeButtons.forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.target.parentElement.style.display = 'none';
-      });
-    });
-  });
-</script>
+  <script src="animation.js"></script>
+</body>
+</html>
