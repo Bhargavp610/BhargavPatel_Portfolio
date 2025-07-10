@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to close all sections
   const closeAllSections = () => {
     sections.forEach(sec => {
-      sec.style.display = 'none';
+      sec.style.display = 'none'; // Hide all sections
     });
   };
 
