@@ -1,3 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Bhargav Patel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      margin: 0; padding: 0;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: flex-end;
+      background: #161b22;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-bar a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .nav-bar a.active {
+      border-bottom: 2px solid #58a6ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2 {
+      font-family: 'Roboto Mono', monospace;
+      color: #58a6ff;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      min-height: 2.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #58a6ff;
+      width: 0;
+      animation: typing 2.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    h1 { animation-delay: 0s, 2.5s; }
+    h2 { animation-delay: 2.6s, 5.1s; }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #58a6ff; }
+    }
+
+    .project-group {
+      margin-bottom: 3rem;
+    }
+
+    .project-group h3 {
+      color: #8b949e;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .project-item {
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .project-item strong {
+      color: #58a6ff;
+    }
+
+    @media (max-width: 768px) {
+      h1, h2 {
+        border-right: none;
+        animation: none;
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
 <main>
   <section class="project-group">
     <h2 class="collapsible-title" data-target="web-dev">🌐 Web Development Projects</h2>
@@ -88,16 +196,28 @@
 </main>
 
 <script>
-  document.querySelectorAll('.collapsible-title').forEach(title => {
-    title.addEventListener('click', () => {
-      const target = document.getElementById(title.dataset.target);
-      target.style.display = 'block';
-    });
-  });
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.project-content');
+    const triggers = document.querySelectorAll('.collapsible-title');
+    const closeButtons = document.querySelectorAll('.close-btn');
 
-  document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.target.parentElement.style.display = 'none';
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const targetId = trigger.dataset.target;
+        sections.forEach(sec => {
+          if (sec.id === targetId) {
+            sec.style.display = 'block';
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.target.parentElement.style.display = 'none';
+      });
     });
   });
 </script>
