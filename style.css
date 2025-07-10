@@ -175,7 +175,11 @@ section {
     border-radius: 6px;
   }
 
-  .close-btn {
+  .collapsible-title {
+    cursor: pointer;
+  }
+
+.close-btn {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -185,8 +189,3 @@ section {
   border: none;
   cursor: pointer;
 }
-
-
-  .collapsible-title {
-    cursor: pointer;
-  }
