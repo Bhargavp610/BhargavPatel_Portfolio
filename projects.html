@@ -6,131 +6,32 @@
   <title>Projects | Bhargav Patel</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <nav class="nav-bar">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="projects.html" class="nav-link active">Projects</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="project-group animate-slide-up">
-      <h2>💡 Machine Learning Projects</h2>
-
-      <details>
-        <summary class="collapsible-title">Credit Card Categorization</summary>
-        <div class="project-content">
-          Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Weather Predictor</summary>
-        <div class="project-content">
-          Forecasts weather using regression models. Handles data preparation, feature scaling, and test-set evaluation with excellent interpretability.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Predict Salary</summary>
-        <div class="project-content">
-          Predicts if salary is above or below $50,000 using KNN, Decision Tree, and Random Forest.
-        </div>
-      </details>
-    </section>
-
-    <section class="project-group animate-slide-up">
-      <h2>🔧 Compiler Projects</h2>
-
-      <details>
-        <summary class="collapsible-title">Lexical Analyzer</summary>
-        <div class="project-content">
-          Developed a lexical analyzer for tokenizing input for a Pascal-like language.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Building a Parser</summary>
-        <div class="project-content">
-          Recursive-descent parser for a Pascal-like language using EBNF grammar. Includes semantic checks, error messages, and syntax validation.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Building an Interpreter</summary>
-        <div class="project-content">
-          Executes the Pascal-like language with type checking, symbol tables, expression evaluation, and runtime error handling.
-        </div>
-      </details>
-    </section>
-
-    <section class="project-group animate-slide-up">
-      <h2>🎮 Game Development Projects</h2>
-
-      <details>
-        <summary class="collapsible-title">3D Unity Games (3–5 Projects)</summary>
-        <div class="project-content">
-          Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">VR Pedestrian Safety Simulation (Capstone)</summary>
-        <div class="project-content">
-          Designed a VR simulation for pedestrian safety using Unity. Integrated interactive elements and immersive user experience.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Unity Certification</summary>
-        <div class="project-content">
-          Earned certification in Unity Development validating 3D and VR project skills.
-        </div>
-      </details>
-    </section>
-
-    <section class="project-group animate-slide-up">
-      <h2>📚 Data Structures & Algorithms (DSA) Projects</h2>
-
-      <details>
-        <summary class="collapsible-title">15 Block Puzzle Using A* Algorithm</summary>
-        <div class="project-content">
-          Developed an A* search algorithm solution to solve the 15-block puzzle problem efficiently.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Dynamic Programming Assignment</summary>
-        <div class="project-content">
-          Implemented frequency table, Huffman coding, encoding, decoding, and Huffman tree construction functions in Python as part of a group programming assignment.
-        </div>
-      </details>
-    </section>
-
-    <section class="project-group animate-slide-up">
-      <h2>🌐 Front-End Projects</h2>
-
-      <details>
-        <summary class="collapsible-title">Netflix Landing Page Clone</summary>
-        <div class="project-content">
-          <strong>Tools:</strong> HTML, CSS, JavaScript<br />
-          Recreated the Netflix homepage with responsive layout and styled components. Focused on visual fidelity and clean HTML/CSS structure.
-        </div>
-      </details>
-
-      <details>
-        <summary class="collapsible-title">Restaurant Website</summary>
-        <div class="project-content">
-          <strong>Tools:</strong> HTML, CSS<br />
-          Designed and built a multi-page restaurant website with sections for menu, contact, and hours. Practiced layout, typography, and responsive styling.
-        </div>
-      </details>
-    </section>
-  </main>
-
-  <script src="animation.js"></script>
-</body>
-</html>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      margin: 0; padding: 0;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: flex-end;
+      background: #161b22;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-bar a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+    }
+    .nav-bar a.active {
+      border-bottom: 2px solid #58a6ff;
+    }
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
