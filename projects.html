@@ -62,6 +62,7 @@
       padding: 1rem;
       margin-top: 0.5rem;
       border-radius: 6px;
+      position: relative;
     }
 
     .project-item {
@@ -71,6 +72,17 @@
 
     .project-item strong {
       color: #58a6ff;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: none;
+      color: #c9d1d9;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -85,22 +97,24 @@
 
   <main>
     <section class="project-group">
-  <h2 class="collapsible-title">🌐 Web Development Projects</h2>
-  <div class="project-content">
-    <div class="project-item">
-      <strong>Restaurant Website (HTML, CSS)</strong><br />
-      Designed and built a multi-page restaurant website with sections for menu, contact, and hours. Practiced layout, typography, and responsive styling.
-    </div>
-    <div class="project-item">
-      <strong>Netflix Landing Page Clone (HTML, CSS, JavaScript)</strong><br />
-      Recreated the Netflix homepage with responsive layout and styled components. Focused on visual fidelity and clean HTML/CSS structure.
-    </div>
-  </div>
-</section>
+      <h2 class="collapsible-title">🌐 Web Development Projects</h2>
+      <div class="project-content">
+        <button class="close-btn">×</button>
+        <div class="project-item">
+          <strong>Restaurant Website (HTML, CSS)</strong><br />
+          Designed and built a multi-page restaurant website with sections for menu, contact, and hours. Practiced layout, typography, and responsive styling.
+        </div>
+        <div class="project-item">
+          <strong>Netflix Landing Page Clone (HTML, CSS, JavaScript)</strong><br />
+          Recreated the Netflix homepage with responsive layout and styled components. Focused on visual fidelity and clean HTML/CSS structure.
+        </div>
+      </div>
+    </section>
 
     <section class="project-group">
       <h2 class="collapsible-title">💡 Machine Learning Projects</h2>
       <div class="project-content">
+        <button class="close-btn">×</button>
         <div class="project-item">
           <strong>Credit Card Categorization</strong><br />
           Classifies credit scores (Good, Standard, Poor) using Decision Tree, KNN, and Naive Bayes. Focuses on model training, cross-validation, and evaluation via precision/recall and confusion matrix.
@@ -119,6 +133,7 @@
     <section class="project-group">
       <h2 class="collapsible-title">🔧 Compiler Projects</h2>
       <div class="project-content">
+        <button class="close-btn">×</button>
         <div class="project-item">
           <strong>Lexical Analyzer</strong><br />
           Developed a lexical analyzer for tokenizing input for a Pascal-like language.
@@ -137,6 +152,7 @@
     <section class="project-group">
       <h2 class="collapsible-title">🎮 Game Development Projects</h2>
       <div class="project-content">
+        <button class="close-btn">×</button>
         <div class="project-item">
           <strong>3D Unity Games (3–5 Projects)</strong><br />
           Developed multiple interactive 3D games during Unity coursework covering physics, animations, and game logic.
@@ -155,6 +171,7 @@
     <section class="project-group">
       <h2 class="collapsible-title">🧠 Algorithms & Optimization</h2>
       <div class="project-content">
+        <button class="close-btn">×</button>
         <div class="project-item">
           <strong>15 Block Puzzle Using A* Algorithm</strong><br />
           Developed an A* search algorithm solution to solve the 15-block puzzle problem efficiently.
@@ -170,10 +187,33 @@
   <script src="Animation.js"></script>
   <script>
     // Collapsible functionality
-    document.querySelectorAll('.collapsible-title').forEach(title => {
-      title.addEventListener('click', () => {
-        const content = title.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    const sections = document.querySelectorAll('.project-content');
+    const triggers = document.querySelectorAll('.collapsible-title');
+    
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling;
+        const isOpen = content.style.display === 'block';
+
+        // Close all sections
+        sections.forEach(sec => {
+          sec.style.display = 'none';
+        });
+
+        // Open the clicked section if it was not already open
+        if (!isOpen) {
+          content.style.display = 'block';
+        }
+      });
+    });
+
+    // Close button functionality
+    document.querySelectorAll('.close-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const section = e.target.closest('.project-content');
+        if (section) {
+          section.style.display = 'none'; // Hide the section
+        }
       });
     });
   </script>
