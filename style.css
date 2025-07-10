@@ -176,15 +176,16 @@ section {
   }
 
   .close-btn {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: none;
-    color: #c9d1d9;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-  }
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  color: #c9d1d9;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
 
   .collapsible-title {
     cursor: pointer;
