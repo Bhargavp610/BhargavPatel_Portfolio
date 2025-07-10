@@ -27,10 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
       sections.forEach(sec => {
         if (sec.id === targetId) {
           sec.classList.add('show');
+          sec.setAttribute('aria-hidden', 'false');
         } else {
           sec.classList.remove('show');
+          sec.setAttribute('aria-hidden', 'true');
         }
       });
+
     };
 
     trigger.addEventListener('click', activate);
