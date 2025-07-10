@@ -19,45 +19,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeButtons = document.querySelectorAll('.close-btn');
 
   triggers.forEach(trigger => {
-    trigger.setAttribute('tabindex', '0'); // for accessibility
-    const targetId = trigger.dataset.target;
+  trigger.setAttribute('tabindex', '0'); // accessibility
+  const targetId = trigger.dataset.target;
 
-    // Click or Enter/Space triggers toggle
-    const activate = () => {
-      sections.forEach(sec => {
-        if (sec.id === targetId) {
-          sec.classList.add('show');
-          sec.setAttribute('aria-hidden', 'false');
-        } else {
-          sec.classList.remove('show');
-          sec.setAttribute('aria-hidden', 'true');
-        }
-      });
-
-    };
-
-    trigger.addEventListener('click', activate);
-    trigger.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        activate();
+  const activate = () => {
+    sections.forEach(sec => {
+      if (sec.id === targetId) {
+        sec.classList.add('show');
+        sec.setAttribute('aria-hidden', 'false');
+      } else {
+        sec.classList.remove('show');
+        sec.setAttribute('aria-hidden', 'true');
       }
     });
+  };
+
+  trigger.addEventListener('click', activate);
+  trigger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      activate();
+    }
   });
+});
+
 
   closeButtons.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.target.parentElement.classList.remove('show');
-    });
+  btn.addEventListener('click', e => {
+    const section = e.target.closest('.project-content');
+    if (section) {
+      section.classList.remove('show');
+      section.setAttribute('aria-hidden', 'true');
+    }
   });
+});
+
 
   // Optional: Click outside to close any open section
   document.addEventListener('click', e => {
-    if (
-      ![...triggers].some(t => t.contains(e.target)) &&
-      ![...sections].some(s => s.contains(e.target))
-    ) {
-      sections.forEach(sec => sec.classList.remove('show'));
-    }
-  });
+  if (
+    ![...triggers].some(t => t.contains(e.target)) &&
+    ![...sections].some(s => s.contains(e.target))
+  ) {
+    sections.forEach(sec => {
+      sec.classList.remove('show');
+      sec.setAttribute('aria-hidden', 'true');
+    });
+  }
 });
