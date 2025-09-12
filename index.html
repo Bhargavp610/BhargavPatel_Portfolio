@@ -196,12 +196,21 @@
   </main>
 
   <footer>
-  <a href="Bhargav_Patel_Resume_For_Git.pdf" 
-     download 
-     class="resume-download">
+  <button onclick="downloadResume()" class="resume-download">
     📄 Download My Resume (PDF)
-  </a>
+  </button>
   <p>&copy; 2025 Bhargav Patel</p>
+
+  <script>
+    function downloadResume() {
+      const link = document.createElement('a');
+      link.href = 'Bhargav_Patel_Resume_For_Git.pdf';
+      link.download = 'Bhargav_Patel_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
 </footer>
 
   <script src="animations.js"></script>
