@@ -12,7 +12,8 @@
   --muted-text: #b3b3b3;
 
   /* 10% accent */
-  --primary-color: #00ffd1;     /* buttons / active / highlights */
+  --primary-color: #00ffd1;        /* main accent */
+  --primary-color-light: #66ffe0;  /* lighter accent for hover */
   --link-color: #00ffd1;
 
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -51,13 +52,12 @@ a {
 }
 
 a:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* =========================
    NAV
 ========================= */
-
 
 .nav-bar {
   display: flex;
@@ -66,6 +66,7 @@ a:hover {
   padding: 1.1rem 2.5rem;
   background-color: #2f2f2f; /* slightly darker, cleaner */
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); /* added here */
 }
 
 /* Your name (brand) */
@@ -76,11 +77,24 @@ a:hover {
   color: #ffffff;
 }
 
-/* Nav links container spacing */
+/* Nav links container spacing
+   Works for index/projects (div) and contact (ul) */
 .nav-bar > div,
 .nav-bar ul {
   display: flex;
-  gap: 1.8rem; /* THIS adds space between Home / Projects / Contact */
+  gap: 1.8rem; /* adds spacing between Home / Projects / Contact */
+  align-items: center;
+}
+
+/* If you use <ul> nav on contact.html */
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar li {
+  margin: 0; /* gap handles spacing */
 }
 
 /* Nav links */
@@ -92,36 +106,11 @@ a:hover {
 }
 
 .nav-bar a:hover {
-  color: var(--primary-color);
+  color: var(--primary-color-light); /* lighter hover */
 }
 
 .nav-bar a.active {
   color: var(--primary-color);
-}
-
-
-/* If you use <ul> nav on contact.html */
-.nav-bar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar li {
-  margin-left: 2rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--text-color);
-}
-
-.nav-bar a.active,
-.nav-bar a:hover {
-  color: var(--primary-color);
-  font-weight: 600;
 }
 
 /* =========================
@@ -156,7 +145,7 @@ h1 span, h2 span {
 
 .image-box img {
   width: 100%;
-  max-width: 300px;   /* IMPORTANT: keeps them same size as before */
+  max-width: 300px;   /* keeps them same size as before */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
@@ -195,13 +184,14 @@ h1 span, h2 span {
   margin: 1rem 0;
   font-weight: 700;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
   cursor: pointer;
 }
 
 .resume-download:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  opacity: 0.95;
+  background: var(--primary-color-light);
 }
 
 /* =========================
@@ -255,7 +245,29 @@ h1 span, h2 span {
 }
 
 .close-btn:hover {
-  color: var(--primary-color);
+  color: var(--primary-color-light);
+}
+
+/* =========================
+   FOOTER (CENTER EVERYTHING)
+========================= */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* key: centers button + text */
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 2.5rem 1rem;
+  background-color: var(--surface-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: var(--muted-text);
 }
 
 /* =========================
@@ -272,8 +284,12 @@ h1 span, h2 span {
     max-width: 220px;
   }
 
-  .nav-bar li {
-    margin-left: 1rem;
+  .nav-bar {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-bar > div,
+  .nav-bar ul {
+    gap: 1.1rem;
   }
 }
-
