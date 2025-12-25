@@ -225,7 +225,7 @@ h1 span, h2 span {
 
 .collapsible-title {
   cursor: pointer;
-  color: var(--primary-color);
+  color: #EF88AD;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
