@@ -1,20 +1,20 @@
 :root {
   /* 60% base */
-  --bg-color: #141414;
+  --bg-color: #222831;
 
   /* 30% surfaces */
-  --secondary-color: #222222;   /* cards / panels */
-  --surface-color: #3b3b3b;     /* nav / raised elements */
+  --secondary-color: #393E46;   /* cards / panels */
+  --surface-color: #393E46;     /* nav / raised elements */
 
   /* neutrals */
-  --border-color: #636363;
-  --text-color: #e6e6e6;
-  --muted-text: #b3b3b3;
+  --border-color: #948979;
+  --text-color: #DFD0B8;
+  --muted-text: rgba(223, 208, 184, 0.75);
 
   /* 10% accent */
-  --primary-color: #00ffd1;        /* main accent */
-  --primary-color-light: #66ffe0;  /* lighter accent for hover */
-  --link-color: #00ffd1;
+  --primary-color: #948979;        /* main accent */
+  --primary-color-light: #DFD0B8;  /* lighter accent for hover */
+  --link-color: #948979;
 
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -64,9 +64,9 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 1.1rem 2.5rem;
-  background-color: #2f2f2f; /* slightly darker, cleaner */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); /* added here */
+  background-color: var(--surface-color);
+  border-bottom: 1px solid rgba(223, 208, 184, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
 /* Your name (brand) */
@@ -74,15 +74,14 @@ a:hover {
   font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
-/* Nav links container spacing
-   Works for index/projects (div) and contact (ul) */
+/* Nav links container spacing */
 .nav-bar > div,
 .nav-bar ul {
   display: flex;
-  gap: 1.8rem; /* adds spacing between Home / Projects / Contact */
+  gap: 1.8rem;
   align-items: center;
 }
 
@@ -94,19 +93,19 @@ a:hover {
 }
 
 .nav-bar li {
-  margin: 0; /* gap handles spacing */
+  margin: 0;
 }
 
 /* Nav links */
 .nav-bar a {
-  color: #cfcfcf;
+  color: var(--muted-text);
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.2s ease;
 }
 
 .nav-bar a:hover {
-  color: var(--primary-color-light); /* lighter hover */
+  color: var(--primary-color-light);
 }
 
 .nav-bar a.active {
@@ -127,8 +126,7 @@ h1 span, h2 span {
 }
 
 /* =========================
-   RESTORE YOUR OLD LAYOUT
-   (Fixes big images + alignment)
+   LAYOUT
 ========================= */
 
 .flex-container {
@@ -145,18 +143,18 @@ h1 span, h2 span {
 
 .image-box img {
   width: 100%;
-  max-width: 300px;   /* keeps them same size as before */
+  max-width: 300px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(99, 99, 99, 0.25);
+  border: 1px solid rgba(148, 137, 121, 0.25);
 }
 
 .text-box {
   max-width: 600px;
 }
 
-/* Certificates (index.html uses .certificate-image) */
+/* Certificates */
 .certificate-image {
   text-align: center;
   margin-top: 2rem;
@@ -168,7 +166,7 @@ h1 span, h2 span {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(99, 99, 99, 0.25);
+  border: 1px solid rgba(148, 137, 121, 0.25);
 }
 
 /* =========================
@@ -177,13 +175,13 @@ h1 span, h2 span {
 
 .resume-download {
   display: inline-block;
-  background: var(--primary-color);
-  color: #000;
+  background: var(--primary-color-light);
+  color: #222831;
   padding: 0.65rem 1.2rem;
   border-radius: 10px;
   margin: 1rem 0;
   font-weight: 700;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
   cursor: pointer;
 }
@@ -191,11 +189,11 @@ h1 span, h2 span {
 .resume-download:hover {
   transform: translateY(-2px);
   opacity: 0.95;
-  background: var(--primary-color-light);
+  background: var(--primary-color);
 }
 
 /* =========================
-   PROJECTS (Optional cards)
+   PROJECTS
 ========================= */
 
 .project-card {
@@ -203,14 +201,14 @@ h1 span, h2 span {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 12px;
-  border: 1px solid rgba(99, 99, 99, 0.25);
+  border: 1px solid rgba(148, 137, 121, 0.25);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 255, 209, 0.35);
+  border-color: rgba(223, 208, 184, 0.45);
 }
 
 /* Collapsible content */
@@ -218,14 +216,13 @@ h1 span, h2 span {
   display: none;
   position: relative;
   background: var(--secondary-color);
-  border: 1px solid rgba(99, 99, 99, 0.25);
+  border: 1px solid rgba(148, 137, 121, 0.25);
   padding: 1rem;
   margin-top: 0.75rem;
   border-radius: 10px;
   color: var(--muted-text);
 }
 
-/* Optional: project titles */
 .collapsible-title {
   cursor: pointer;
   color: var(--primary-color);
@@ -249,19 +246,19 @@ h1 span, h2 span {
 }
 
 /* =========================
-   FOOTER (CENTER EVERYTHING)
+   FOOTER
 ========================= */
 
 footer {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* key: centers button + text */
+  align-items: center;
   justify-content: center;
   gap: 1rem;
 
   padding: 2.5rem 1rem;
   background-color: var(--surface-color);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(223, 208, 184, 0.08);
   text-align: center;
 }
 
