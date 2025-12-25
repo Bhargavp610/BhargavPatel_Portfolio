@@ -225,10 +225,17 @@ h1 span, h2 span {
 
 .collapsible-title {
   cursor: pointer;
-  color: #EF88AD;
+  color: var(--primary-color);
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+
+
+.project-item strong {
+  color: #948979;
+  font-weight: 700;
+}
+
 
 .close-btn {
   position: absolute;
